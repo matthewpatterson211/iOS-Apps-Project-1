@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Option" representedClassName="Option" syncable="YES" codeGenerationType="class">
+        <attribute name="scale" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="scaleFactor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Option" inverseName="scaleFactor" inverseEntity="Option"/>
+    </entity>
+    <elements>
+        <element name="Option" positionX="-54" positionY="-9" width="128" height="73"/>
+    </elements>
+</model>

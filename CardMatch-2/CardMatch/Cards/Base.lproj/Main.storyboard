@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O7z-bg-oIV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-FG-JYA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Card Match" id="g6o-Vv-gYh">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Kb7-7Y-jnp">
+                                            <connections>
+                                                <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="sJ3-uN-eyW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3I4-JX-9W7">
+                                            <connections>
+                                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="R3Z-dF-4Ci"/>
+                                                <segue destination="rnw-Lu-7tK" kind="show" id="aCI-P1-xGh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zhz-Yq-Qs2">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aUu-QY-Xtz">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="zxF-n0-vhx" customClass="CollectionViewCell" customModule="CardMatch">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="l2M-nh-boT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Magic_card_back" translatesAutoresizingMaskIntoConstraints="NO" id="FPG-4b-oBj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="FPG-4b-oBj" firstAttribute="leading" secondItem="zxF-n0-vhx" secondAttribute="leading" id="Nbv-h6-VAV"/>
+                                            <constraint firstAttribute="trailing" secondItem="l2M-nh-boT" secondAttribute="trailing" id="Olv-8w-gpP"/>
+                                            <constraint firstItem="l2M-nh-boT" firstAttribute="leading" secondItem="zxF-n0-vhx" secondAttribute="leading" id="QM6-lY-t2y"/>
+                                            <constraint firstAttribute="trailing" secondItem="FPG-4b-oBj" secondAttribute="trailing" id="bjM-Q1-yfF"/>
+                                            <constraint firstAttribute="bottom" secondItem="FPG-4b-oBj" secondAttribute="bottom" id="ih7-dn-gA9"/>
+                                            <constraint firstItem="FPG-4b-oBj" firstAttribute="top" secondItem="zxF-n0-vhx" secondAttribute="top" id="s42-On-yOI"/>
+                                            <constraint firstAttribute="bottom" secondItem="l2M-nh-boT" secondAttribute="bottom" id="vTE-qC-O8a"/>
+                                            <constraint firstItem="l2M-nh-boT" firstAttribute="top" secondItem="zxF-n0-vhx" secondAttribute="top" id="yVe-9F-qL2"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cardBack" destination="FPG-4b-oBj" id="6cF-v3-K6i"/>
+                                            <outlet property="cardFront" destination="l2M-nh-boT" id="aCH-EN-RM6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DLW-mn-CAD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wy3-8V-aZ9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="doO-FG-JYA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BpD-fU-sFz"/>
+                            <constraint firstItem="doO-FG-JYA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GfS-L9-2Dm"/>
+                            <constraint firstItem="Zhz-Yq-Qs2" firstAttribute="top" secondItem="doO-FG-JYA" secondAttribute="bottom" id="UET-yN-ME3"/>
+                            <constraint firstItem="doO-FG-JYA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XiC-mm-H3M"/>
+                            <constraint firstItem="doO-FG-JYA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bYy-8K-v45"/>
+                            <constraint firstItem="Zhz-Yq-Qs2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cQW-uJ-FAq"/>
+                            <constraint firstItem="Zhz-Yq-Qs2" firstAttribute="trailing" secondItem="doO-FG-JYA" secondAttribute="trailing" id="k9h-hF-7l3"/>
+                            <constraint firstItem="Zhz-Yq-Qs2" firstAttribute="leading" secondItem="doO-FG-JYA" secondAttribute="leading" id="m2z-UV-oKW"/>
+                            <constraint firstItem="doO-FG-JYA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u77-gV-qKR"/>
+                            <constraint firstItem="doO-FG-JYA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zdG-47-Hb2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HSv-JW-uuo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Zhz-Yq-Qs2" id="XkV-hE-GvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
+        </scene>
+        <!--Scale Selection View Controller-->
+        <scene sceneID="Bje-ua-0dl">
+            <objects>
+                <viewController id="rnw-Lu-7tK" customClass="ScaleSelectionViewController" customModule="CardMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OOH-Qa-KSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wXc-VY-qhH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LabelCell" id="eU4-dH-uhO">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eU4-dH-uhO" id="4ri-7C-PFS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wXc-VY-qhH" firstAttribute="leading" secondItem="opR-PQ-5Gp" secondAttribute="leading" id="6xq-wN-Chh"/>
+                            <constraint firstItem="wXc-VY-qhH" firstAttribute="top" secondItem="opR-PQ-5Gp" secondAttribute="top" id="Hai-hu-AdB"/>
+                            <constraint firstItem="opR-PQ-5Gp" firstAttribute="bottom" secondItem="wXc-VY-qhH" secondAttribute="bottom" id="sHk-Nn-1QI"/>
+                            <constraint firstItem="opR-PQ-5Gp" firstAttribute="trailing" secondItem="wXc-VY-qhH" secondAttribute="trailing" id="w44-RM-A0L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="opR-PQ-5Gp"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wXc-VY-qhH" id="Q4G-lg-T7n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzI-g6-Uvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="110"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Myr-1h-RAO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O7z-bg-oIV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xnU-K0-v94">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GfP-hY-C9t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1XZ-pb-Jsv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Magic_card_back" width="745" height="1040"/>
+        <image name="card1" width="672" height="936"/>
+    </resources>
+</document>
